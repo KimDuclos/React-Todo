@@ -7,9 +7,9 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoThings: [
+      todoThings: [  // constructor object to feed list
         {
-          task: 'Task1',
+          task: 'task1',
           id: 1,
           complete: false
         },
