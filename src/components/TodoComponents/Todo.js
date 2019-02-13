@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Todo = props => {
-    return (
-        <div className='strikeLine'>
-            
-        </div>
-    )
-}
+    <div style= { textDecoration: 'line-through' }>
+        onClick= () =>
+    </div>
+};
+
 export default Todo;

@@ -3,15 +3,16 @@ import Todo from './Todo';
 
 // your components will all go in this `component` directory.
 
-const TodoList = props => {
-    return (
-        <div className="listComponent">
-            {props.tasksTodo.map(taskToDo => (
-                // component to output tasks
-                <taskToDo complete={props.complete} idNum={taskToDo.id} taskToDo={taskToDo}/>
-            ))}
-        </div>
-     );
-};
+//  map over all task objects in the array and put them in a component
 
-export default Todo;
+const TodoList = () => {
+    return (
+      <div className="list">
+        {items.map(item => (
+            <Item item={item} />
+        ))}
+      </div>
+    );
+}
+
+export default TodoList;

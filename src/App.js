@@ -1,16 +1,16 @@
 import React from 'react';
 
-import ToDoList from './components/TodoComponents/TodoList';
-import ToDoForm from './components/TodoComponents/TodoForm';
+import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoThings: [  // constructor object to feed list
+     items: [  // constructor object to feed list and create state of list
         {
-          task: 'task1',
-          id: 1,
+          task: '',
+          id: '',
           complete: false
         },
       ]
@@ -18,8 +18,22 @@ class App extends React.Component {
   };
 }
 
+ addTask = e => {
+   const items = this.state.items;
+   items = items.push(items.task)
+ }
+
+ changeToComplete = e => {
+
+ }
+
+ removeTask = e => {
+   const items = this.state.items;
+   items
+ }
 
 
+export default App;
 
 
  // you will need a place to store your state in this component.
