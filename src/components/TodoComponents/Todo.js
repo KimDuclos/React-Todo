@@ -1,9 +1,12 @@
 import React from 'react';
 
+
 const Todo = props => {
-    <div style= { textDecoration: 'line-through' }>
-        onClick= () =>
-    </div>
-};
+    return(
+        <div>
+            {props.task}
+        </div>
+    ); 
+}
 
 export default Todo;

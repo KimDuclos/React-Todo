@@ -1,18 +1,20 @@
 import React from 'react';
+
 import Todo from './Todo';
 
-// your components will all go in this `component` directory.
 
-//  map over all task objects in the array and put them in a component
-
-const TodoList = () => {
+const TodoList = props => {
+    const todoItems = props.items.map(item => {
+        return (
+            <Todo task={item.task}
+                  key={item.id}/>
+        );
+    })
     return (
-      <div className="list">
-        {items.map(item => (
-            <Item item={item} />
-        ))}
-      </div>
+        <div>
+            {todoItems}
+        </div>
     );
-}
+};
 
 export default TodoList;
