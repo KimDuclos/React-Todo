@@ -17,6 +17,8 @@ class App extends React.Component {
       ]
     }
     this.addNewItem = this.addNewItem.bind(this);
+    this.clearList = this.clearList.bind(this);
+    this.markComplete = this.markComplete.bind(this);
   };
 
 
@@ -31,11 +33,28 @@ class App extends React.Component {
     this.setState({items: items});
   }
 
+  clearList(){
+    const items = this.state.items.slice();
+    const uncompleted = items.filter(item => !item.complete);
+    this.setState({items: uncompleted});
+  }
+
+  markComplete(item) {
+    const items = this.state.items.slice();
+    const checkedItems = items.map( i => {
+      if (i.id === item) {
+        i.complete = true;
+      }
+      return i;
+    });
+    this.setState({items: checkedItems});
+  }
+
   render() {
     return (
       <div>
-        <TodoList items={this.state.items} />
-        <TodoForm itemHandler={this.addNewItem}/>
+        <TodoList items={this.state.items} markComplete={this.markComplete} />
+        <TodoForm itemHandler={this.addNewItem} clearHandler={this.clearList}/>
       </div>
     );
   } 
